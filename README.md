@@ -1,53 +1,34 @@
 # APPLE 公式さGITHUB readme Link 
 [APPLE GITHUB README](https://github.com/apple/ml-aim/blob/main/README.md)
 
-## 公式のInstallation
-**CUDA のバージョンに応じて適切なバージョンｄにｓインストールしてください。ここでは説明しない。多くの記事はこの世の中に存在している。**
+## syun88 さんのコードの mlx 版です
+refarence: [AppleのAIMv2で画像特徴量抽出しcocodatasetの画像セットで類似画像検索に挑戦](https://qiita.com/syun88/items/50c1d60d1516d5816773)
 
-### pytorch install 公式サイトに参照
-[installation instructions](https://pytorch.org/get-started/locally/).
-パケージのインストール
-
-```commandline
-pip install 'git+https://github.com/apple/ml-aim.git#subdirectory=aim-v1'
-pip install 'git+https://github.com/apple/ml-aim.git#subdirectory=aim-v2'
+## setup
+uv を使用しています
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
+echo 'eval "$(uvx --generate-shell-completion zsh)"' >> ~/.zshrc
 ```
 
-**MLXに対応も可能だそうです**
-
-### MLXとはMLX is an array framework for machine learning on Apple silicon, brought to you by Apple machine learning research.
-### MLXは、アップルの機械学習研究によってもたらされた、アップルのシリコン上での機械学習のための配列フレームワークです。
-### つまりこれでAppleの**MAC シリコン M chip** で動作も可能です。
-[MLX](https://ml-explore.github.io/mlx/) backend support for research and experimentation on Apple silicon.
-To enable MLX support, simply run:
-```commandline
-pip install mlx
+### clone repo
+```sh
+git clone ***
+cd ***
 ```
 
-transformers のインストール
-```commandline
-pip install transformers
+### create env and install packages
+```sh
+uv sync
 ```
 
-cuda version check 
-```commandline
-nvidia-smi
-```
-or
-```commandline
-nvcc --version
-```
-
-install `tqdm` `tqdm` in  `prepare_feature.py`  to visualize the progress of your code. 
-```commandline
-pip install tqdm
-```
-
-dowonload val2017
-```commacdline
-wget -c http://images.cocodataset.org/zips/val2017.zip
-unzip
+### dowonload val2017
+```sh
+./get_coco_files.sh
 ``` 
+
+### 以下、随時実装
 
 AppleのAIMv2でマルチモーダル機能を活用編1「画像領域特徴量の抽出とテキストで画像領域の可視化」の起動コマンド
 ```commandline

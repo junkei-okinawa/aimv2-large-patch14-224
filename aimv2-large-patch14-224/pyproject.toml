@@ -1,0 +1,19 @@
+[project]
+name = "aimv2-large-patch14-224"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aim-v1",
+    "aim-v2",
+    "mlx>=0.21.0",
+    "pillow>=11.0.0",
+    "scikit-learn>=1.5.2",
+    "tqdm>=4.67.1",
+    "transformers>=4.46.3",
+]
+
+[tool.uv.sources]
+aim-v1 = { git = "https://github.com/apple/ml-aim.git", subdirectory = "aim-v1" }
+aim-v2 = { git = "https://github.com/apple/ml-aim.git", subdirectory = "aim-v2" }
