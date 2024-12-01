@@ -29,6 +29,17 @@ uv sync
 ``` 
 
 ### run
+create features safetensors
+```sh
+uv run prepare_features.py
+```
+
+image search
 ```sh
 uv run main.py
+```
+
+image search and open files
+```sh
+uv run image_search.py
 ```

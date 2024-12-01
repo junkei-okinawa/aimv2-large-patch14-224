@@ -14,19 +14,14 @@ echo 'eval "$(uvx --generate-shell-completion zsh)"' >> ~/.zshrc
 
 ### clone repo
 ```sh
-git clone ***
-cd ***
+git clone https://github.com/junkei-okinawa/aimv2-large-patch14-224.git
+cd aimv2-large-patch14-224
 ```
 
 ### create env and install packages
 ```sh
 uv sync
 ```
-
-### dowonload val2017
-```sh
-./get_coco_files.sh
-``` 
 
 ### 以下、随時実装
 
