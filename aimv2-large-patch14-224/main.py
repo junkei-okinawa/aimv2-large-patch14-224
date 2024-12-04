@@ -19,23 +19,29 @@
 # print(outputs)
 # print(outputs.last_hidden_state.shape)
 
-from tqdm import tqdm
 import os
-from PIL import Image
 import torch
+from PIL import Image
+from tqdm import tqdm
 from sklearn.metrics.pairwise import cosine_similarity
 from transformers import AutoImageProcessor, AutoModel
 
-# GPUの設定
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# GPUの設定 cpu or cuda or mps
+device = "cpu"
+if torch.cuda.is_available():
+    device = "cuda"
+elif torch.backends.mps.is_available():
+    device = "mps"
+
+print(f"Using device: {device}")
 
 # モデルとプロセッサのロード
 processor = AutoImageProcessor.from_pretrained("apple/aimv2-large-patch14-224")
 model = AutoModel.from_pretrained("apple/aimv2-large-patch14-224", trust_remote_code=True).to(device)
 
 # 検索対象画像のディレクトリ
-image_dir = "/media/syun/ssd02/python_learning/apple/qiita_project_AIMv2/coco_image/val2017"
-features_file = "coco_features.pt"
+image_dir = "first_image"
+features_file = "real_estate_features.pt"
 
 # 特徴量の保存またはロード
 def extract_features(image_dir):
@@ -73,7 +79,7 @@ def get_query_features(query_image_path):
 
 
 # クエリ画像を指定
-query_image_path = "/media/syun/ssd02/python_learning/apple/qiita_project_AIMv2/test_search_image/cat.jpg" 
+query_image_path = "test_search_image/suumo2.jpg" 
 print("Extracting features from query image...")
 query_features = get_query_features(query_image_path)
 

@@ -1,8 +1,8 @@
-# APPLE 公式さGITHUB readme Link 
+# APPLE 公式GITHUB readme Link 
 [APPLE GITHUB README](https://github.com/apple/ml-aim/blob/main/README.md)
 
 ## 公式のInstallation
-**CUDA のバージョンに応じて適切なバージョンｄにｓインストールしてください。ここでは説明しない。多くの記事はこの世の中に存在している。**
+**CUDA のバージョンに応じて適切なバージョンをインストールしてください。ここでは説明しない。多くの記事はこの世の中に存在している。**
 
 ### pytorch install 公式サイトに参照
 [installation instructions](https://pytorch.org/get-started/locally/).
