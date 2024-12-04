@@ -1,24 +1,3 @@
-# original code 
-# import requests
-# from PIL import Image
-# from transformers import AutoImageProcessor, AutoModel
-
-# url = "http://images.cocodataset.org/val2017/000000039769.jpg"
-# image = Image.open(requests.get(url, stream=True).raw)
-
-# processor = AutoImageProcessor.from_pretrained(
-#     "apple/aimv2-large-patch14-native",
-# )
-# model = AutoModel.from_pretrained(
-#     "apple/aimv2-large-patch14-native",
-#     trust_remote_code=True,
-# )
-
-# inputs = processor(images=image, return_tensors="pt")
-# outputs = model(**inputs)
-# print(outputs)
-# print(outputs.last_hidden_state.shape)
-
 import os
 import torch
 from PIL import Image
@@ -79,7 +58,7 @@ def get_query_features(query_image_path):
 
 
 # クエリ画像を指定
-query_image_path = "test_search_image/suumo2.jpg" 
+query_image_path = "test_search_image/egg_plant.jpg" 
 print("Extracting features from query image...")
 query_features = get_query_features(query_image_path)
 
