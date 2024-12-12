@@ -1,0 +1,9 @@
+cache_dir_local = "./models/.cache"
+features_dir_local = "./features"
+cache_dir_cloud = "/mnt/any_cloud_direvtory/models/.cache"
+features_dir_cloud = "/mnt/any_cloud_direvtory/features"
+model_file = "models--apple--aimv2-large-patch14-336/snapshots/83dcdf8b706cbc41e3c51ba5f02b4e9dfe5723a9"
+processor_file = "models--apple--aimv2-large-patch14-336/snapshots/83dcdf8b706cbc41e3c51ba5f02b4e9dfe5723a9"
+features_file = "any_features_file_name_336.pt"
+top_n = 30
+image_dir = "./any_images_direvtory"

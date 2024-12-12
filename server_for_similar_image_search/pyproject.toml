@@ -1,0 +1,25 @@
+[project]
+name = "aimv2-large-patch14-224"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aim-v1",
+    "aim-v2",
+    "fastapi[all]>=0.115.5",
+    "pillow>=11.0.0",
+    "scikit-learn>=1.5.2",
+    "transformers>=4.46.3",
+    "loguru==0.7.2",
+]
+
+[tool.uv.sources]
+aim-v1 = { git = "https://github.com/apple/ml-aim.git", subdirectory = "aim-v1" }
+aim-v2 = { git = "https://github.com/apple/ml-aim.git", subdirectory = "aim-v2" }
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.1",
+    "tqdm>=4.67.1",
+]

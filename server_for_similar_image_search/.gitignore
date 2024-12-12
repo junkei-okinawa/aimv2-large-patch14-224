@@ -1,0 +1,7 @@
+**__pycache__**
+*.safetensors*
+*.pt
+val2017
+models
+features
+.venv
